@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Gallery</title>
+</head>
+
+<body>
+    <h1>Gallery Test</h1>
+    <div class="container">
+        <ul class="gallery">
+            <li>
+                <a href="#gambar1">
+                    <img src="img\thumb\ayaka.jpg" alt="ayang">
+                    <span>Ayang</span>
+                </a>
+
+                <div class="overlay" id="gambar1">
+                    <a href="#" class="close">X</a>
+                    <a href="#gambar2" class="prev"></a>
+                    <img src="img\full\ayaka.jpg" alt="ayang">
+                    <a href="#gambar2" class="next"></a>
+                </div>
+            </li>
+
+            <li>
+                <a href="#gambar2">
+                    <img src="img\thumb\ayakaa.jpg" alt="ayang">
+                    <span>Ayang</span>
+                </a>
+
+                <div class="overlay" id="gambar2">
+                    <a href="#gambar1" class="prev"></a>
+                    <a href="#" class="close">X</a>
+                    <img src="img\full\ayakaa.jpg" alt="ayang">
+                    <a href="#gambar1" class="next"></a>
+                </div>
+            </li>
+            <div class="clear"></div>
+        </ul>
+    </div>
+</body>
+
+</html>

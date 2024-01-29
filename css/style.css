@@ -1,0 +1,152 @@
+body {
+    font: 18px/36px 'Poppins', 'Arial Narrow', arial, sans-serif;
+    background-color: #ababab;
+}
+
+h1 {
+    font-size: 80px;
+    margin: 50px;
+    text-align: center;
+    text-shadow: auto;
+}
+
+.container {
+    width: 600px;
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+.gallery li {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    border: 5px solid #666;
+    float: left;
+    margin-right: 20px;
+    position: relative;
+}
+
+.gallery li a img {
+    width: 120px;
+}
+
+.gallery li,
+.gallery li span {
+    border-radius: 50%;
+}
+
+.gallery li span {
+    display: block;
+    width: 120px;
+    height: 120px;
+    background-color: rgba(200, 200, 200, .5);
+    position: absolute;
+    top: 0;
+    text-align: center;
+    line-height: 120px;
+    columns: #333;
+    text-shadow: 1px 1px 1px #ddd;
+    opacity: 0;
+    transition: 300ms;
+    transform: scale(0) rotate(0);
+}
+
+.gallery li a:hover span {
+    opacity: 1;
+    transform: scale(1) rotate(360deg);
+}
+
+.clear {
+    clear: both;
+}
+
+/* overlay */
+.overlay {
+    display: none;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #00000000;
+    z-index: 1;
+    transition: .8;
+    text-align: center;
+    padding: 100px 0;
+}
+
+/* jadi setelah di target baru dia narik antara top bottom left rightnya */
+.overlay:target {
+    display: block;
+    bottom: 0;
+    right: 0;
+    background-color: #000000ab;
+}
+
+.overlay img {
+    max-height: 100%;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.5);
+}
+
+.overlay:target img {
+    animation: slideDownFade .3s;
+}
+
+.overlay .close {
+    position: absolute;
+    top: 50px;
+    left: 49%;
+    color: white;
+    text-decoration: none;
+    opacity: 0;
+}
+
+.overlay:target .close,
+.next,
+.prev {
+    animation: slideDownFade .3s .3s forwards;
+}
+
+/* navigasi */
+.next,
+.prev {
+    width: 93px;
+    height: 61px;
+    background-image: url(../img/next.png);
+    position: absolute;
+    top: 40%;
+    margin-left: 50px;
+    opacity: 0;
+}
+
+.prev {
+    background-image: url(../img/prev.png);
+    margin-left: -150px;
+}
+
+/* animasi */
+@keyframes zoomDanFade {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDownFade {
+    0% {
+        opacity: 0;
+        margin-top: -20px;
+    }
+
+    100% {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
